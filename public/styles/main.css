@@ -1,0 +1,146 @@
+.st{
+    text-decoration: line-through;
+}
+
+.op{
+    padding-bottom: 0;
+    margin-bottom: 0.2rem;
+} 
+
+
+.navbar{
+    background-color:#cb5546;
+}
+
+.navbar-brand{
+    color: whitesmoke;
+}
+.brand-img{
+    position: relative;
+    bottom: 0.1rem;
+    padding-left: 10%;
+    padding-right: 5%;
+}
+
+.brand-name{
+    
+font-family: 'Roboto Mono', monospace;
+font-size: 1.3rem;
+}
+
+.btn-personal{
+    padding-right: 5rem;
+    margin-left: 1rem;
+}
+.btn{
+    background-color: 
+    #cb5546;
+    font-family: 'Roboto Mono', monospace;
+    border-radius: 16px;
+
+}
+.text-center{
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    font-size: 1.8rem;
+}
+
+.date{
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    font-size: 1.4rem;
+    font-weight: lighter;
+
+}
+.list-name{
+    padding-top: 1rem;
+    font-size: 2rem;
+}
+
+
+.content{
+    background-color: #FFFFFF		;
+    font-family: 'Roboto Mono', monospace;
+    margin-left: 44%;
+    padding-top: 1rem;
+}
+.op{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.6rem;
+    
+}
+
+ .form-control{
+    width: 16%;
+   margin-left: 42%;
+}
+
+
+.submit{
+    padding-top: 0.9rem;
+    margin-left: 45%;
+    padding-bottom: 5rem;
+    
+}
+
+.submit1{
+    padding-top: 0.9rem;
+    
+    padding-bottom: 5rem;
+}
+
+
+.back{
+    width: 100%;
+    font-family: 'Roboto Mono', monospace;
+}
+.last{
+    padding: 3%;
+    padding-bottom: 2.6rem;
+    margin-bottom: 0;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    color: #FFFFFF;
+}
+
+.foot{
+    position: absolute;
+    bottom: 0;
+}
+
+
+ @media only screen and (max-width: 990px) {
+    .brand-name{
+        font-size: 1rem;
+    }
+    .btn-work{
+        margin-left: 0.5rem;
+        margin-bottom: 0.5rem;
+        
+
+    }
+
+    .form-control{
+        width: min-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .btn{
+        font-size: 0.9rem    }
+
+        .flex{
+            display: flex;
+            justify-content: flex-start;
+        }
+
+    .btn-md{
+        margin-left: 0;
+    }
+    .date{
+        font-size: small;
+    }
+    .list-name{
+        font-size: large;
+        padding-bottom: 20px;
+    }
+  }

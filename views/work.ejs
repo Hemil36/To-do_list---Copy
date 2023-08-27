@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto+Mono:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto+Mono:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="/">
+            <img src="data:image/png;base64,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"
+                class="brand-img" height="50" />
+            <span class="brand-name"> To-do list </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse flex" id="navbarNavAltMarkup">
+            <div class="navbar-nav  flex">
+                <div>
+
+                    <form class="container-fluid btn-work" action="/work" method="post">
+                        <button class="btn btn-md btn-outline-light" type="submit" value="work">
+                            Work
+                        </button>
+                    </form>
+                </div>
+                <div>
+
+                    <form class=" btn-personal" action="/Personal" method="post">
+                        <button class="btn btn-md btn-outline-light " type="submit" value="Personal">
+                            Personal
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="list-name text-center">Work List</div>
+    <div class="date ">
+        Date: <%= day %>,<%= month %>
+                <%= date %>
+
+
+                    <span id="time" class="t">
+
+                    </span>
+
+    </div>
+
+    <div class="content">
+        <% if(locals.notes){ %>
+            <% for(var i=0;i < count ;i++){ %>
+                <form>
+
+                    <input type="checkbox" class='check' id=<%=i %> >
+
+
+                    <label for="check">
+
+                        <p id='content<%= i %>' class="op">
+                            <%= notes[i] %>
+                        </p>
+                    </label>
+                </form>
+
+                <br>
+                <% } %>
+                    <% } %>
+
+    </div>
+    <div class="saved">
+        <form action="/wb" method="post">
+
+            <div class="col-auto">
+                <input type="form-text " name="note" class="form-control" placeholder="            Enter Tasks here" />
+            </div>
+            <div class="submit ">
+
+                <button type="submit" value="wb" class="btn btn-outline-light  mx-auto "> Let's Do It</button>
+            </div>
+        </form>
+    </div>
+
+    <footer class=" back " style="background-color: #cb5546; ">
+        <div class=" last">
+
+            Copyright Hemil Dudhat © <%= new Date().getFullYear() %>
+        </div>
+    </footer>
+
+    <script>
+
+
+        let r = [];
+        fetch("/count").then(response => response.json()).then(c => {
+
+
+
+            if (c <= 4) {
+                $(".back").addClass("foot");
+            }
+            else {
+                $(".back").removeClass("foot");
+            }
+        }
+
+        )
+
+        fetch("/count1").then(response => response.json()).then(c => {
+
+            fetch("/checklist1").then(response => response.json()).then(bv => {
+                let lp = bv.bv;
+                function removeDuplicates(arr) {
+                    return [...new Set(arr)];
+
+                }
+                lp = removeDuplicates(lp);
+                console.log(c, lp);
+
+                if (c > 0 && lp.length != 0) {
+
+                    for (var i = 0; i < lp.length; i++) {
+
+                        var io = lp[i];
+                        $("#" + io).click();
+                    }
+                }
+
+            })
+
+
+
+        }
+
+        )
+
+
+    fetch("/count").then(response => response.json()).then(c =>{
+
+            if(c<=4){
+                $(".back").addClass("foot");
+            }
+        }
+            
+        )
+
+        $(".check").click(function (event) {
+            var rec = $(this).attr("id");
+            var select = $(this);
+            var id = "content" + rec;
+
+            $("#" + id).toggleClass("st");
+           
+
+            fetch("/post1", {
+                method: "POST",
+                body: JSON.stringify({
+                    Array: rec
+                }),
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            });
+
+        });
+
+
+        function myFunction(x) {
+            if (x.matches) { // If media query matches
+                $(".navbar-nav").removeClass("ms-auto");
+                $(".submit").addClass("text-center","submit1");
+                $(".text-center").removeClass("submit");
+
+                $('.form-control').attr('placeholder','Enter Tasks here');
+                
+
+                
+            } else {
+                $(".navbar-nav").addClass("ms-auto");
+               
+            }
+            }
+
+            var x = window.matchMedia("(max-width: 990px)")
+            myFunction(x) // Call listener function at run time
+            x.addListener(myFunction) // Attach listener function on state changes
+
+
+        setInterval(myTimer, 1000);
+
+        function myTimer() {
+            const date = new Date();
+            document.getElementById("time").innerHTML = date.toLocaleTimeString();
+        }
+    </script>
+
+
+</body>
+
+</html>
