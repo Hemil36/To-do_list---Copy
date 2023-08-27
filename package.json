@@ -7,5 +7,7 @@
     "jquery": "^3.7.0",
     "nodemon": "^3.0.1"
   },
-  "type": "module"
+  "type": "module",
+
+  "start": "node index.js"
 }
